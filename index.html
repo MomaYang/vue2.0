@@ -7,27 +7,15 @@
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-	<!-- vue-app 是根容器 -->
+	<!-- 键盘事件及键值修饰符 -->
 	<div id="vue-app">
-		<h1>{{name}} {{age}}</h1>
-		<!-- 鼠标单击事件 -->
-		<!-- .once 修饰符只触发一次 -->
-		<button v-on:click.once="add(1)">涨一岁</button>
-		<!-- @是v-on的简写符号 -->
-		<button @click="subtract(1)">涨一岁</button>
-		<!-- 鼠标双击事件 -->
-		<button v-on:dblclick="add(10)">涨一岁</button>
-		<button v-on:dblclick="subtract(10)">涨一岁</button>
-
-		<!-- 鼠标事件 -->
-		<div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}
-			<!-- 阻止事件冒泡 -->
-			<p v-on:mousemove="stopMoving">js中方法阻止事件冒泡</p>
-			<p v-on:mousemove.stop="">vue中修饰符阻止事件冒泡</p>
-		</div>
-
-		<!-- 阻止默认事件  .prevent 修饰符 -->
-		<a v-on:click.prevent="alert()" href="http://www.baidu.com">阻止a标签默认事件</a>
+		<h1>键盘 Events</h1>
+		<label>姓名：</label>
+		<!-- keyup.enter  键值修饰符 -->
+		<input type="text" v-on:keyup.enter="logName">
+		<label>年龄：</label>
+		<!-- keyup.alt.enter 链式修饰符  多个按键一起配合使用-->
+		<input type="text" v-on:keyup.alt.enter="logAge">
 	</div>
 	<script src="app.js"></script>
 </body>
