@@ -11,7 +11,8 @@
 	<div id="vue-app">
 		<h1>{{name}} {{age}}</h1>
 		<!-- 鼠标单击事件 -->
-		<button v-on:click="add(1)">涨一岁</button>
+		<!-- .once 修饰符只触发一次 -->
+		<button v-on:click.once="add(1)">涨一岁</button>
 		<!-- @是v-on的简写符号 -->
 		<button @click="subtract(1)">涨一岁</button>
 		<!-- 鼠标双击事件 -->
@@ -19,7 +20,14 @@
 		<button v-on:dblclick="subtract(10)">涨一岁</button>
 
 		<!-- 鼠标事件 -->
-		<div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
+		<div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}
+			<!-- 阻止事件冒泡 -->
+			<p v-on:mousemove="stopMoving">js中方法阻止事件冒泡</p>
+			<p v-on:mousemove.stop="">vue中修饰符阻止事件冒泡</p>
+		</div>
+
+		<!-- 阻止默认事件  .prevent 修饰符 -->
+		<a v-on:click.prevent="alert()" href="http://www.baidu.com">阻止a标签默认事件</a>
 	</div>
 	<script src="app.js"></script>
 </body>

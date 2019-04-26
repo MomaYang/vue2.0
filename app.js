@@ -15,10 +15,18 @@ new Vue({
 		subtract: function(time){
 			this.age -= time;
 		},
+		//怎样拿到当前鼠标的值，在js当中有这个一样值event
 		updateXY:function(event){
 			// console.log(event)
 			this.x = event.offsetX;
 			this.y = event.offsetY;
+		},
+		stopMoving: function(event){
+			// js阻止事件冒泡
+			event.stopPropagation();
+		},
+		alert: function(){
+			alert("hello world!")
 		}
 	}
 });
