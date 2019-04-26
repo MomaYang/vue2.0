@@ -3,20 +3,23 @@
 <head>
 	<title>vue2.0 小白入门教程</title>
 	<meta charset="utf-8">
-    <link href="styles.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
 	<!-- vue-app 是根容器 -->
 	<div id="vue-app">
-		<!-- 方法传参，字符串 -->
-		<h1>{{greet('yes')}}</h1>
-		<p>{{name}}</p>
-		<p>{{job}}</p>
-		<!-- 属性绑定 -->
-		<a v-bind:href="website">web开发</a>
-		<input type="" :value="name" name="">
-		<p v-html="websiteTag"></p>
+		<h1>{{name}} {{age}}</h1>
+		<!-- 鼠标单击事件 -->
+		<button v-on:click="add(1)">涨一岁</button>
+		<!-- @是v-on的简写符号 -->
+		<button @click="subtract(1)">涨一岁</button>
+		<!-- 鼠标双击事件 -->
+		<button v-on:dblclick="add(10)">涨一岁</button>
+		<button v-on:dblclick="subtract(10)">涨一岁</button>
+
+		<!-- 鼠标事件 -->
+		<div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
 	</div>
 	<script src="app.js"></script>
 </body>
