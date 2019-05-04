@@ -7,31 +7,21 @@
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-	<!-- 键盘事件及键值修饰符 -->
+
 	<div id="vue-app">
-		<h1>双向数据绑定 / input / select / textarea </h1>
-		<label>姓名：</label>
-		<!-- 
-
-			ref 在vue2.0里可以经input做标记的，
-			$refs  可以获取ref标记的值
-	 
-		 -->
-		<input ref="name" type="text" v-on:keyup="logName">
-		<span>{{name}}</span>
-		<label>年龄：</label>
-		<input ref="age" type="text" v-on:keyup="logAge">
-		<span>{{age}}</span>
-		<br>
-		<label>姓名2：</label>
-		<input type="text" v-model="name2">
-		<span>{{name2}}</span>
-		<label>年龄2：</label>
-		<input type="text" v-model="age2">
-		<span>{{age2}}</span>
+		<h1>Computed 计算属性</h1>
+		
+		<button v-on:click="a++">Add to A</button>
+		<button v-on:click="b++">Add to B</button>
+		<p>A = {{a}}</p>
+		<p>B = {{b}}</p>
+		<!-- <p>使用方法时会重复执行，消耗性能</p>
+		<p>age + A = {{addToA()}}</p>
+		<p>age + B = {{addToB()}}</p> -->
+		<p>使用计算属性</p>
+		<p>age + A = {{addToA}}</p>
+		<p>age + B = {{addToB}}</p>
 	</div>
-
-
 
 	
 	<script src="app.js"></script>
