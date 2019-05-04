@@ -10,25 +10,27 @@
 	<!-- 键盘事件及键值修饰符 -->
 	<div id="vue-app">
 		<h1>双向数据绑定 / input / select / textarea </h1>
-		<label>姓名：</label>
-		<!-- 
 
-			ref 在vue2.0里可以经input做标记的，
+		<!-- 
+			ref    在vue2.0里可以经input做标记的，
 			$refs  可以获取ref标记的值
-	 
-		 -->
-		<input ref="name" type="text" v-on:keyup="logName">
-		<span>{{name}}</span>
+		-->
+		<p>1.使作v-on:keyup(keyup键盘事件)事件获取input里的值</p>
+		<label>姓名：</label>
+		<input ref="name" type="text" v-on:keyup="logName"><span>{{name}}</span>
 		<label>年龄：</label>
-		<input ref="age" type="text" v-on:keyup="logAge">
-		<span>{{age}}</span>
+		<input ref="age" type="text" v-on:keyup="logAge"><span>{{age}}</span>
 		<br>
+
+		<p>2.使用v-model(双向数据绑定)获取input里的值</p>
 		<label>姓名2：</label>
 		<input type="text" v-model="name2">
 		<span>{{name2}}</span>
 		<label>年龄2：</label>
 		<input type="text" v-model="age2">
 		<span>{{age2}}</span>
+
+		<p>注意：都能达到相同的结果</p>
 	</div>
 
 
